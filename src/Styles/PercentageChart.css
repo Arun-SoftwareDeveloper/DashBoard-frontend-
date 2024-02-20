@@ -1,14 +1,10 @@
-/* Styles for the PercentageChart component */
 .PercentageChart {
   position: relative;
 }
 
-/* Style the canvas element */
 .PercentageChart canvas {
-  width: 100px; /* Adjust width as needed */
-  height: 100px; /* Adjust height as needed */
+  width: 100px;
+  height: 100px;
   display: block;
   margin: auto;
 }
-
-/* Additional styles as needed */

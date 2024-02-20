@@ -1,4 +1,3 @@
-// ResetPassword.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";

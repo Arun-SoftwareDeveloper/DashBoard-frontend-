@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ApexCharts from "react-apexcharts";
 import axios from "axios";
-import { BarChartData } from "./barChartData";
+import { BarChartData } from "./BarChartData";
 
 function StockCart() {
   const [options, setOptions] = useState({
