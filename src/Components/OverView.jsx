@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PercentageChart from "../Components/PercentageChart"; // Assuming you have created a PercentageChart component
-import "../Styles/OverView.css"; // Import the CSS file for styling
+import PercentageChart from "../Components/PercentageChart";
+import "../Styles/OverView.css";
 
 function OverView() {
   const [overViewData, setOverViewData] = useState({

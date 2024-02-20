@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ApexCharts from "react-apexcharts";
 import axios from "axios";
 import { BarChartData } from "./BarChartData";
+import backendApi from "../BackendServerApi";
 
 function StockCart() {
   const [options, setOptions] = useState({
@@ -50,7 +51,7 @@ function StockCart() {
     const fetchLineChartData = async () => {
       try {
         const responseLineChart = await axios.get(
-          "http://localhost:4000/getlinechartdata"
+          `${backendApi}/getlinechartdata`
         );
         const { series, categories } = responseLineChart.data;
         setOptions((prevOptions) => ({

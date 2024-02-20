@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import backendApi from "../BackendServerApi";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -8,7 +9,7 @@ const UsersList = () => {
     // Fetch the list of users when the component mounts
     async function fetchUsers() {
       try {
-        const response = await axios.get("http://localhost:4000/usersList");
+        const response = await axios.get(`${backendApi}/usersList`);
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -18,29 +19,9 @@ const UsersList = () => {
     fetchUsers();
   }, []);
 
-  const handleEdit = async (id) => {
-    try {
-      // Fetch the user details by ID
-      const response = await axios.get(`http://localhost:4000/user/${id}`);
-      const userToUpdate = response.data;
-
-      // Example: Assume we have a form to edit user details
-      // After editing, update the user object with the edited data
-      const updatedUser = { ...userToUpdate, firstName: "Updated Name" };
-
-      // Send a PUT request to update the user
-      await axios.put(`http://localhost:4000/editUser/${id}`, updatedUser);
-
-      // Update the user list in the state
-      setUsers(users.map((user) => (user._id === id ? updatedUser : user)));
-    } catch (error) {
-      console.error("Error editing user:", error);
-    }
-  };
-
   const handleRemove = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/deleteUser/${id}`);
+      await axios.delete(`${backendApi}/deleteUser/${id}`);
       setUsers(users.filter((user) => user._id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);
