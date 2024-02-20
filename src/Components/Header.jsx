@@ -10,8 +10,14 @@ function AppHeader() {
     <Header className="header">
       <div className="logo" />
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-        <Menu.Item key="1">Dashboard</Menu.Item>
-        <Menu.Item key="2">Users</Menu.Item>
+        <Link to="/dashBoard">
+          {" "}
+          <Menu.Item key="1">Dashboard</Menu.Item>
+        </Link>
+        <Link to="/usersList">
+          {" "}
+          <Menu.Item key="2">Users</Menu.Item>
+        </Link>
         <Menu.Item key="3">Settings</Menu.Item>
         <Link to="/login">
           <Menu.Item key="4" style={{ float: "right" }} icon={<UserOutlined />}>

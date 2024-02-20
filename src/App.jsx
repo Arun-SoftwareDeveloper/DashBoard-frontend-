@@ -5,6 +5,8 @@ import Login from "./Forms/Login";
 import ForgotPassword from "./Forms/ForgotPassword";
 import ResetPassword from "./Forms/ResetPassword";
 import DashBoard from "./Components/DashBoard";
+import UsersList from "./Components/UsersList";
+import UserInfo from "./Components/UserInfo";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +26,7 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/dashBoard" element={<DashBoard />} />
+        <Route path="/usersList" element={<UserInfo />} />
       </Routes>
     </Router>
   );

@@ -1,3 +1,3 @@
-const backendApi = "https://dashboard-backend-rst2.onrender.com";
+const backendApi = "http://localhost:4000";
 
 export default backendApi;

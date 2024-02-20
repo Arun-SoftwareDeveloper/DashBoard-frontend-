@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "../FormsStyles/Register.css"; // Import your custom styles if needed
 import { Link, useNavigate } from "react-router-dom";
 import backendApi from "../BackendServerApi";
 
@@ -12,6 +11,8 @@ const Register = ({ onSwitchAuthStep }) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState({
@@ -19,6 +20,8 @@ const Register = ({ onSwitchAuthStep }) => {
     lastName: "",
     email: "",
     password: "",
+    phoneNumber: "",
+    dateOfBirth: "",
   });
 
   const handleRegister = async (e) => {
@@ -26,7 +29,14 @@ const Register = ({ onSwitchAuthStep }) => {
 
     // Validation
     let valid = true;
-    const newErrors = { firstName: "", lastName: "", email: "", password: "" };
+    const newErrors = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      phoneNumber: "",
+      dateOfBirth: "",
+    };
 
     if (!firstName.trim()) {
       valid = false;
@@ -48,6 +58,16 @@ const Register = ({ onSwitchAuthStep }) => {
       newErrors.password = "Password is required";
     }
 
+    if (!phoneNumber.trim()) {
+      valid = false;
+      newErrors.phoneNumber = "Phone Number is required";
+    }
+
+    if (!dateOfBirth.trim()) {
+      valid = false;
+      newErrors.dateOfBirth = "Date of Birth is required";
+    }
+
     setErrors(newErrors);
 
     if (!valid) {
@@ -61,6 +81,8 @@ const Register = ({ onSwitchAuthStep }) => {
         lastName,
         email,
         password,
+        phoneNumber,
+        dateOfBirth,
       });
 
       // Handle success with toast notification
@@ -136,6 +158,36 @@ const Register = ({ onSwitchAuthStep }) => {
           />
           {errors.password && (
             <div className="invalid-feedback">{errors.password}</div>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="phoneNumber" className="form-label">
+            Phone Number:
+          </label>
+          <input
+            type="text"
+            className={`form-control ${errors.phoneNumber && "is-invalid"}`}
+            id="phoneNumber"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          {errors.phoneNumber && (
+            <div className="invalid-feedback">{errors.phoneNumber}</div>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="dateOfBirth" className="form-label">
+            Date of Birth:
+          </label>
+          <input
+            type="date"
+            className={`form-control ${errors.dateOfBirth && "is-invalid"}`}
+            id="dateOfBirth"
+            value={dateOfBirth}
+            onChange={(e) => setDateOfBirth(e.target.value)}
+          />
+          {errors.dateOfBirth && (
+            <div className="invalid-feedback">{errors.dateOfBirth}</div>
           )}
         </div>
         <button

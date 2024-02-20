@@ -8,6 +8,7 @@ import {
   ArrowRightOutlined,
 } from "@ant-design/icons";
 import "../Styles/Sidebar.css"; // Import your CSS file for styling
+import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
 
@@ -32,9 +33,17 @@ function Sidebar() {
           <Menu.Item key="2" icon={<DashboardOutlined />} className="menu-item">
             Dashboard
           </Menu.Item>
-          <Menu.Item key="3" icon={<TeamOutlined />} className="menu-item">
-            Users
-          </Menu.Item>
+          <Link to="/usersList">
+            {" "}
+            <Menu.Item
+              key="3"
+              icon={<TeamOutlined />}
+              className="menu-item"
+              style={{ marginLeft: "25px", textDecorationLine: "none" }}
+            >
+              Users
+            </Menu.Item>
+          </Link>
           <Menu.SubMenu
             key="sub1"
             icon={<RightOutlined />}
