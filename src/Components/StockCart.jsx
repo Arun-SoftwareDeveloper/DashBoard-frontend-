@@ -50,7 +50,7 @@ function StockCart() {
     const fetchLineChartData = async () => {
       try {
         const responseLineChart = await axios.get(
-          "http://localhost:4000/getlinechartdata"
+          "https://dashboard-backend-rst2.onrender.com/getlinechartdata"
         );
         const { series, categories } = responseLineChart.data;
         setOptions((prevOptions) => ({
