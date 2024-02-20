@@ -1,0 +1,65 @@
+/* Styles for the overview container */
+.overViewContainer {
+  /* Add styles here */
+}
+
+/* Styles for the overview items */
+.overview-item {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+}
+
+/* Styles for Connections item */
+.overview-item.connections {
+  background-color: skyblue; /* Background color for Connections */
+}
+
+.overview-item {
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Styles for Connections overview item */
+.overview-item.connections1 {
+  background-color: #ffa07a; /* Light salmon */
+}
+
+/* Styles for Configurations overview item */
+.overview-item.configurations2 {
+  background-color: #90ee90; /* Light green */
+}
+
+/* Styles for Pipelines overview item */
+.overview-item.pipelines3 {
+  background-color: #add8e6; /* Light blue */
+}
+
+/* Styles for Schedules overview item */
+.overview-item.schedules4 {
+  background-color: #ffcccb; /* Light pink */
+}
+
+/* Styles for Configurations item */
+.overview-item.configurations {
+  background-color: lightgreen; /* Background color for Configurations */
+}
+
+/* Styles for Pipelines item */
+.overview-item.pipelines {
+  background-color: lightcoral; /* Background color for Pipelines */
+}
+
+/* Styles for Schedules item */
+.overview-item.schedules {
+  background-color: lightyellow; /* Background color for Schedules */
+}
+
+/* Additional styles for the FontAwesome icons */
+.fa-plug,
+.fa-connectdevelop,
+.fa-clock {
+  /* Add any specific styles for the icons here */
+}

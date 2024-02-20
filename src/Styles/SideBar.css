@@ -1,0 +1,43 @@
+/* Sidebar container */
+.sidebar-container {
+  width: 100%;
+  background-color: dodgerblue; /* Set the background color */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: dodgerblue; /* Set the background color */
+}
+
+/* Menu */
+.menu {
+  padding-top: 20px; /* Add padding to the top */
+}
+
+/* Menu item */
+.menu-item {
+  padding: 10px 20px; /* Add padding */
+}
+
+/* Logout menu item */
+.menu-item.logout {
+  color: red; /* Change text color to red */
+}
+
+/* Sub-menu */
+.sub-menu {
+  background-color: #f0f0f0; /* Set background color */
+  border-radius: 5px; /* Add border radius */
+  padding: 10px; /* Add padding */
+  margin-top: 10px; /* Add margin to the top */
+}
+
+/* Sub-menu item */
+.sub-menu .menu-item {
+  padding-left: 30px; /* Add left padding */
+}
+
+/* Icon */
+.fa-solid {
+  margin-right: 10px; /* Add margin to the right of the icon */
+}

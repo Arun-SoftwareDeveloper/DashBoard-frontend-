@@ -1,0 +1,15 @@
+.footer {
+  text-align: center;
+  background-color: #001529;
+  color: white;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.col-md-12 {
+  font-size: 14px;
+}
