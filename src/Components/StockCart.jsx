@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ApexCharts from "react-apexcharts";
 import axios from "axios";
-import { BarChartData } from "./BarChartData";
+import { BarChartData } from "./BarChartData"; // Importing the BarChartData component
 import backendApi from "../BackendServerApi";
 
 function StockCart() {
@@ -44,8 +44,6 @@ function StockCart() {
     },
   });
 
-  const [ratingData, setRatingData] = useState([]);
-
   useEffect(() => {
     // Fetch line chart data from backend
     const fetchLineChartData = async () => {
@@ -73,20 +71,6 @@ function StockCart() {
     };
 
     fetchLineChartData();
-  }, []);
-
-  useEffect(() => {
-    // Fetch rating data from backend
-    const fetchRatingData = async () => {
-      try {
-        const response = await axios.get("http://localhost:4000/getrating");
-        setRatingData(response.data);
-      } catch (error) {
-        console.error("Error fetching rating data:", error);
-      }
-    };
-
-    fetchRatingData();
   }, []);
 
   return (
