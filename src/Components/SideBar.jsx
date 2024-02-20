@@ -7,7 +7,7 @@ import {
   RightOutlined,
   ArrowRightOutlined,
 } from "@ant-design/icons";
-import "../Styles/Sidebar.css"; // Import your CSS file for styling
+import "../Styles/SideBar.css";
 import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
